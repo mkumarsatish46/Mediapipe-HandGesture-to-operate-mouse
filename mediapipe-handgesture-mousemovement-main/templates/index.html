@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Tracking App ✋</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Hand Tracking App ✋</h1>
+            <p>Track your hand gestures in real-time using your webcam.</p>
+        </header>
+
+        <div class="video-container">
+            <img src="{{ url_for('video_feed') }}" alt="Webcam Feed" id="webcam-feed">
+        </div>
+
+        <div class="controls">
+            <button id="start-btn" class="btn">Start Tracking</button>
+            <button id="stop-btn" class="btn btn-danger">Stop Tracking</button>
+            <button id="camera-toggle-btn" class="btn btn-secondary">Turn Camera Off</button>
+        </div>
+
+        <div class="status">
+            <p id="status-text">Status: Waiting to start...</p>
+        </div>
+
+        <footer>
+            <p>Developed with ❤️ using Flask, MediaPipe, and OpenCV</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
